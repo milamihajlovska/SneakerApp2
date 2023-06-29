@@ -8,7 +8,7 @@ from django.conf import settings
 from .models import *
 import json
 import datetime
-import stripe
+
 
 
 # Create your views here.
