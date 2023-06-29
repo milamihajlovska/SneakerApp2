@@ -1,0 +1,48 @@
+{% extends './base.html' %}
+{% load static %}
+{% block content %}
+ <div class="container pt-5">
+
+    <h2 class="mb-3">{{ brand.name }} Sneakers </h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+
+            {% for product in products %}
+
+                <div class="col">
+                    <div class="card h-100" style="border: None">
+                        <img src="{{ MEDIA_URL }}{{ product.image.url }}" class="card-img-top"  alt="...">
+                        <div class="card-body" style="margin-left: 0; padding-left: 0">
+                            <p class="card-title">
+                                {#                      {{product.name}}#}
+                                <a href="{{ product.get_absolute_url }}" style="text-decoration: None; color: black">{{ product.name }}</a>
+                            </p>
+{#                            <div>#}
+{#                                <label for="shoeSize" onChange="getShoeSize()"> Shoe Size </label>#}
+{#                                <select id="shoeSize">#}
+{#                                    <option value="36">36</option>#}
+{#                                    <option value="37">37</option>#}
+{#                                    <option value="38">38</option>#}
+{#                                    <option value="39">39</option>#}
+{#                                    <option value="40">40</option>#}
+{#                                    <option value="41">41</option>#}
+{#                                    <option value="42">42</option>#}
+{#                                    <option value="43">43</option>#}
+{#                                </select>#}
+{#                            </div>#}
+                            <p class="card-text text-secondary">{{ product.description }}</p>
+                            <p class="fw-bold">${{ product.price }}</p>
+                            <a  href="{{ product.get_absolute_url }}"
+                                    class="btn btn-outline-primary">View
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+            <br>
+        </div>
+
+
+
+    </div>
+{% endblock %}
