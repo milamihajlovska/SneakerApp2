@@ -2,8 +2,8 @@
 {% load static %}
 {% block content %}
 
-    <div class="container " >
-    <div>
+    <div class="container"  >
+        <div>
 
         <h2 class="pb-3 text-center">Shopping Cart</h2>
         <hr>
@@ -16,7 +16,7 @@
         <br>
         <hr class="mt-5">
 
-     </div>
+        </div>
         {% if items %}
         <div class="row mt-5">
             <div class="box-element">
@@ -53,13 +53,15 @@
             </div>
         </div>
         {% else %}
+            <div style="height: 120px">
             <h3 class="text-center">Cart is empty..</h3>
-    {% endif %}
+            </div>
+
+{% endif %}
+
     </div>
 
 
-
-    </div>
 
     <script type="text/javascript">
         var updateBtns = document.getElementsByClassName('update-cart-2')
