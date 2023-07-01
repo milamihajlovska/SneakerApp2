@@ -1,7 +1,7 @@
 {% extends './base.html' %}
 {% load static %}
 {% block content %}
-    <div class="container">
+    <div class="container" >
         <h2 class="text-center">Checkout</h2>
     <div class="row">
         <div class="col-lg-8">
@@ -27,37 +27,37 @@
                         <hr>
                         <p>Shipping Information:</p>
                         <hr>
-                        <div class="form-field">
+                        <div class="form-field pt-2">
 
-                            <input class="form-control" type="text" name="address" placeholder="Address..">
+                            <input class="form-control pt-2" type="text" name="address" placeholder="Address..">
                         </div>
-                        <div class="form-field">
-                            <input class="form-control" type="text" name="country" placeholder="Country..">
+                        <div class="form-field pt-2">
+                            <input class="form-control pt-2" type="text" name="country" placeholder="Country..">
                         </div>
-                        <div class="form-field">
-                            <input class="form-control" type="text" name="city" placeholder="City..">
+                        <div class="form-field pt-2">
+                            <input class="form-control pt-2" type="text" name="city" placeholder="City..">
                         </div>
 
-                        <div class="form-field">
-                            <input class="form-control" type="text" name="zipcode" placeholder="Zip code..">
+                        <div class="form-field pt-2">
+                            <input class="form-control pt-2" type="text" name="zipcode" placeholder="Zip code..">
                         </div>
 
                         <hr>
                         <p>Card Information:</p>
                         <hr>
-                        <div class="form-field">
+                        <div class="form-field pt-2">
 
                             <input class="form-control" type="text" name="cardholder_name" placeholder="CardHolder name..">
                         </div>
-                        <div class="form-field">
+                        <div class="form-field pt-2">
                             <input class="form-control" type="text" name="card_number" placeholder="Card Number..">
                         </div>
-                        <div class="form-field">
+                        <div class="form-field pt-2">
                             <input class="form-control" type="text" name="exp_date" placeholder="Expiration Date MM/YYYY..">
                         </div>
 
-                        <div class="form-field">
-                            <input class="form-control" type="text" name="cvc" placeholder="CVC..">
+                        <div class="form-field pt-2">
+                            <input class="form-control " type="text" name="cvc" placeholder="CVC..">
                         </div>
 
 
@@ -99,39 +99,7 @@
     </div>
     </div>
 
-    {% comment %} <script src="https://www.paypal.com/sdk/js?client-id=YOUR-CLIENT-ID&currency=USD&disable-funding=credit"></script> {% endcomment %}
 
-    {% comment %} <script>
-		var total = '{{order.get_cart_total}}'
-        // Render the PayPal button into #paypal-button-container
-        paypal.Buttons({
-
-        	style: {
-                color:  'blue',
-                shape:  'rect',
-            },
-
-            // Set up the transaction
-            createOrder: function(data, actions) {
-                return actions.order.create({
-                    purchase_units: [{
-                        amount: {
-                            value:parseFloat(total).toFixed(2)
-                        }
-                    }]
-                });
-            },
-
-            // Finalize the transaction
-            onApprove: function(data, actions) {
-                return actions.order.capture().then(function(details) {
-                    // Show a success message to the buyer
-                    submitFormData()
-                });
-            }
-
-        }).render('#paypal-button-container');
-    </script> {% endcomment %}
 
     <script type="text/javascript">
         var shipping = '{{order.shipping}}'

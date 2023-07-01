@@ -96,6 +96,53 @@
 {% block content %}
 {% endblock %}
 
+<br>
+    <footer class="pt-3 mt-auto" style="background-color: black ;color: white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <div class="row" style="padding-left: 200px">
+                        <div class="col-sm-10 col-md mb-4 mb-md-0 pt-2">
+                            <h4 style="color: white">SneakerApp</h4>
+                            <ul class="list-unstyled nav-links ">
+                                <li><a style="text-decoration: none; color: lightgray" href="#">Contact</a></li>
+                                <li><a style="text-decoration: none; color: lightgray" href="#">Services</a></li>
+                                <li><a  style="text-decoration: none; color: lightgray" href="#">Team</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-10 col-md mb-4 mb-md-0 pt-2">
+                            <h3 style="color: white">Brands</h3>
+                            <ul class="list-unstyled nav-links">
+                                 {% for b in brands %}
+                            <li><a style="text-decoration: none; color: lightgray" href="{{ b.get_absolute_url }}">{{ b.name }}</a></li>
+                        {% endfor %}
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-10 col-md mb-4 mb-md-0 pt-2">
+                            <h4 style="color: white">Help</h4>
+                            <ul class="list-unstyled nav-links">
+                                <li><a style="text-decoration: none; color: lightgray" href="/help">FAQ</a></li>
+                                <li><a style="text-decoration: none; color: lightgray" href="/help">Support</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row py-3">
+                <div class="col-md-12 pb-3">
+                    <div class="border-top">
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center pb-2">
+
+                    <span class="small text-center">SneakerApp © All Rights Reserved.</span>
+
+            </div>
+        </div>
+
+    </footer>
 
 <script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
 </body>
